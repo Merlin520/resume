@@ -1,10 +1,74 @@
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+body {
+    background: grey;
+    margin: 0;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.topNavBar {
+    /*padding-top: 20px; 上右下左*/
+    /*padding-bottom: 20px;*/
+    /*padding-right: 16px;*/
+    /*padding-left: 16px;*/
+    padding: 20px 16px 20px 16px;
+}
+
+.topNavBar > nav {
+    padding-top: 4px;
+    padding-bottom: 3px;
+}
+.topNavBar > nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.topNavBar > nav > ul > li {
+    float:left;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.topNavBar > nav > ul > li > a {
+    font-size: 14px;
+    color: whitesmoke;
+    font-weight: bold;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.topNavBar > nav > ul > li > a:hover {
+    border-bottom: 3px solid #e06567;
+}
+
+.topNavBar .logo {
+    font-size: 24px;
+    font-family: 仿宋;
+    padding-top: 6px;
+    padding-bottom: 7px;
+}
 
 
+.topNavBar .logo .rs {
+    margin-right: 4px;
+    color: #e6686A;
+}
 
-
-
-
-
+.topNavBar .logo .card {
+    color: #9A9DA2;
+}
 
 
 
