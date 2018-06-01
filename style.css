@@ -19,26 +19,30 @@ a {
     /*padding-bottom: 20px;*/
     /*padding-right: 16px;*/
     /*padding-left: 16px;*/
-    padding: 20px 16px 20px 16px;
+    padding: 20px 0 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.topNavBar > nav {
+.topNavBar nav {
     padding-top: 4px;
     padding-bottom: 3px;
 }
-.topNavBar > nav > ul {
+.topNavBar nav > ul {
     list-style: none;
     margin: 0;
     padding: 0
 }
 
-.topNavBar > nav > ul > li {
+.topNavBar nav > ul > li {
     float:left;
     margin-left: 17px;
     margin-right: 17px;
 }
 
-.topNavBar > nav > ul > li > a {
+.topNavBar nav > ul > li > a {
     font-size: 14px;
     color: whitesmoke;
     font-weight: bold;
@@ -49,7 +53,7 @@ a {
     padding-bottom: 4px;
 }
 
-.topNavBar > nav > ul > li > a:hover {
+.topNavBar nav > ul > li > a:hover {
     border-bottom: 3px solid #e06567;
 }
 
@@ -68,6 +72,10 @@ a {
 
 .topNavBar .logo .card {
     color: #9A9DA2;
+}
+
+.banner {
+    height: 515px;
 }
 
 
