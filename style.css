@@ -22,7 +22,7 @@ body {
 }
 
 a {
-    color: whitesmoke;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -42,6 +42,11 @@ hr {
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.topNavBar-inner {
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .topNavBar nav {
@@ -105,11 +110,12 @@ hr {
 }
 
 .userCard {
-    border: 1px solid red;
+
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,0.3);
 }
 
 .userCard .welcome {
@@ -172,7 +178,7 @@ hr {
 }
 
 .userCard .media {
-    
+
     background: #e6686A;
     text-align: center;
 }
@@ -195,3 +201,34 @@ hr {
     background: #CF505F;
 }
 
+body > main {
+    margin-top: -380px;
+}
+
+body > main .downloadResumeWrapper {
+    text-align: center;
+}
+body > main .downloadResume {
+    border: 1px solid #CDCFD1;
+    background: #EFEFEF;
+    padding: 16px 36px;
+    margin: 32px 0px;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+body > main .downloadResume:hover {
+    transition: box-shadow 0.4s;
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,0.5);
+}
+
+.selfIntroduction {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 18px;
+}
