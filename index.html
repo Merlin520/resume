@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="//at.alicdn.com/t/font_691821_mthtlcdm9dfe0zfr.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>我的简历</title>
 </head>
 <body>
+
+
+
+
 
     <div class="topNavBar" >
         <div class="topNavBar-inner clearfix">
@@ -26,42 +31,55 @@
         </div>
     </div>
 
-    <div class="banner" style="background-image: url(./img/wow.jpg);border: 1px solid red"></div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
 
     <main>
-        <div class="card">
-            <div class="picture">
-                <img src="" alt="头像">
-            </div>
-            <div class="text">
-                <div class="profile">
-                    <span class="welcome">hello</span>
-                    <h1>张三</h1>
-                    <p>前端开发</p>
-                    <hr>
-                    <dl>
-                        <dt>年龄</dt>
-                        <dd>25</dd>
-                        <dt>所在城市</dt>
-                        <dd>深圳</dd>
-                        <dt>邮箱</dt>
-                        <dd>zhangsan@163.com</dd>
-                        <dt>手机</dt>
-                        <dd>3741273561934190</dd>
-                    </dl>
+        <div class="userCard">
+            <div class="pictureAndText clearfix">
+                <div class="picture">
+                    <img src="./img/lol.jpg" width=300 height=348 alt="头像">
                 </div>
+                <div class="text">
+                        <span class="welcome">
+                            hello
+                            <span class="triangle">
+                            </span>
+                        </span>
+                        <h1>张三</h1>
+                        <p>前端开发</p>
+                        <hr>
+                        <dl>
+                            <dt>年龄</dt>
+                            <dd>25</dd>
+                            <dt>所在城市</dt>
+                            <dd>深圳</dd>
+                            <dt>邮箱</dt>
+                            <dd>zhangsan@163.com</dd>
+                            <dt>手机</dt>
+                            <dd>3741273561934190</dd>
+                        </dl>
+                </div>
+            </div>
 
                 <footer class="media">
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
-                    <a href="#"><img src="#" alt="..."></a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-twiter"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-QQ"></use>
+                        </svg>
+                    </a>
                 </footer>
-            </div>
         </div>
 
         <a href="#" class="button">下载PDF简历</a>
