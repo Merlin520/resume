@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <script src="//at.alicdn.com/t/font_691821_mthtlcdm9dfe0zfr.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./loading.css">
     <title>我的简历</title>
 </head>
 <body>
-
-
+    <div id="loadingPage" class="loadingPage active">
+        <div class="loading"></div>
+    </div>
 
 
 
@@ -190,11 +192,13 @@
 
     </section>
 
+    <script>
+        loadingPage.classList.remove('active')
+    </script>
 
 
 
 
 
-<script src="./main.js"></script>
 </body>
 </html>
