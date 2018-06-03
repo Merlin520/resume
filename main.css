@@ -50,6 +50,16 @@ hr {
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+    color: whitesmoke;
+}
+
+.topNavBar.sticky {
+    background: white;
+    padding: 4px 0;
+    z-index: 1;
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,0.3);
+    color: #3d4451;
 }
 
 .topNavBar-inner {
@@ -75,7 +85,7 @@ hr {
 
 .topNavBar nav > ul > li > a {
     font-size: 14px;
-    color: whitesmoke;
+    color: inherit;
     font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;

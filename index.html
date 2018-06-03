@@ -14,7 +14,7 @@
 
 
 
-    <div class="topNavBar" >
+    <div id="topNavBar" class="topNavBar" >
         <div class="topNavBar-inner clearfix">
             <a href="#" class="logo" alt="logo" style="float: left">
                 <span class="rs">RS</span><span class="card">card</span>
@@ -163,21 +163,6 @@
             </div>
         </nav>
 
-        <script>
-            portfolio1.onclick = function () {
-                portfolioBar.className = 'bar state-1'
-            };
-
-            portfolio2.onclick = function () {
-                portfolioBar.className = 'bar state-2'
-            };
-
-            portfolio3.onclick = function () {
-                portfolioBar.className = 'bar state-3'
-            }
-
-        </script>
-
         <div class="works" style="height: 600px ">
             <div class="big">
                 <img src="./img/big.jpg" alt="作品1">
@@ -192,13 +177,7 @@
 
     </section>
 
-    <script>
-        loadingPage.classList.remove('active')
-    </script>
 
-
-
-
-
+    <script src="./main.js"></script>
 </body>
 </html>
