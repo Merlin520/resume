@@ -92,10 +92,29 @@ hr {
     display: block;
     padding-top: 4px;
     padding-bottom: 4px;
+    position: relative;
 }
 
-.topNavBar nav > ul > li > a:hover {
-    border-bottom: 3px solid #e06567;
+@keyframes topNavBarA {
+    0%{
+        width:0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.topNavBar nav > ul > li > a:hover::after {
+    /*border-bottom: 3px solid #e06567;*/
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background:#e06567 ;
+    height: 3px;
+    animation: topNavBarA 0.3s;
 }
 
 .topNavBar .logo {
