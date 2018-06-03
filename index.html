@@ -100,7 +100,7 @@
             <li>
                 <h3>HTML &amp; CSS</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 70%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -108,7 +108,7 @@
             <li>
                 <h3>CSS</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 80%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -116,7 +116,7 @@
             <li>
                 <h3>jQuery</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 60%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -124,7 +124,7 @@
             <li>
                 <h3>数据结构 &amp; 算法</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 80%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -132,7 +132,7 @@
             <li>
                 <h3>JavaScript</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 85%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -140,7 +140,7 @@
             <li>
                 <h3>Vue</h3>
                 <div class="progressBar">
-                    <div class="progress">
+                    <div class="progress" style="width: 70%">
                         <!--<progress value="70" max="100">70 %</progress>-->
                     </div>
                 </div>
@@ -148,20 +148,44 @@
         </ol>
     </section>
 
-    <section>
+    <section class="portfolio">
         <h2>作品集</h2>
         <nav>
-            <ol>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生Js</li>
+            <ol class="clearfix">
+                <li id="portfolio1">所有</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生Js</li>
             </ol>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
+            </div>
         </nav>
 
-        <div class="jobs">
-            <div class="big"></div>
-            <div class="small"></div>
-            <div class="small"></div>
+        <script>
+            portfolio1.onclick = function () {
+                portfolioBar.className = 'bar state-1'
+            };
+
+            portfolio2.onclick = function () {
+                portfolioBar.className = 'bar state-2'
+            };
+
+            portfolio3.onclick = function () {
+                portfolioBar.className = 'bar state-3'
+            }
+
+        </script>
+
+        <div class="works" style="height: 600px ">
+            <div class="big">
+                <img src="./img/big.jpg" alt="作品1">
+            </div>
+            <div class="small" style="right: 16px;top: 0">
+                <img src="./img/small1.jpg" alt="作品2">
+            </div>
+            <div class="small" style="right: 16px;top:300px">
+                <img src="./img/small2.jpg" alt="做品3">
+            </div>
         </div>
 
     </section>
