@@ -23,7 +23,7 @@ window.onscroll = function (xx) {
     }
 };
 
-//点击下拉菜单效果
+//点击下拉菜单效果、出现红色
 let liTags = document.querySelectorAll('nav.navMenu > ul > li');
 for(let i = 0;i < liTags.length;i++){
     liTags[i].onmouseenter = function (x) {
@@ -35,4 +35,15 @@ for(let i = 0;i < liTags.length;i++){
     };
 }
 
+let aTags = document.querySelectorAll('nav.navMenu > ul > li > a');
+for(let i = 0;i < aTags.length;i++){
+    aTags[i].onclick = function (x) {
+        x.preventDefault();
+        let a = x.currentTarget;
+        let  href = a.getAttribute('href');//siteWorks
+        let element = document.querySelector(href);//通过href获取元素（锚点所在的一整片区域）
+        let top = element.offsetTop;//元素距离最顶端的距离
+        window.scrollTo(0,top - 80)//滑动距离
+    }
+}
 
