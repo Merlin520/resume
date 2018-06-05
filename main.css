@@ -448,3 +448,7 @@ section.portfolio .works .small {
 .loadingPage.active {
     display: flex;
 }
+
+[data-x].active {
+    outline: 10px solid red;
+}

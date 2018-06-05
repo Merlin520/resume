@@ -21,6 +21,33 @@ window.onscroll = function (xx) {
     }else{
         topNavBar.classList.remove('sticky')
     }
+
+    let specialTags = document.querySelectorAll('[data-x]');
+    let minIndex = 0;
+    for(let i = 0;i < specialTags.length;i++){
+        if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+            minIndex = i
+        }
+    }
+    for(let i = 0;i < specialTags.length;i++){
+        specialTags[i].classList.remove('active');
+    }
+    specialTags[minIndex].classList.add('active');
+
+
+    //招标签
+    let id = specialTags[minIndex].id;
+    console.log(id);
+    let a = document.querySelector('a[href="#'+ id + '"]');
+    console.log(a);
+    let li =a.parentNode;
+    console.log(li);
+    let brothersAndME = li.parentNode.children;
+    console.log(brothersAndME);
+    for(let i = 0;i < brothersAndME.length;i++){
+        brothersAndME[i].classList.remove('active');
+    }
+    li.classList.add('active');
 };
 
 //点击下拉菜单效果、出现红色
@@ -34,6 +61,18 @@ for(let i = 0;i < liTags.length;i++){
 
     };
 }
+//tween指定代码
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+
+
+
+
+
+
 
 let aTags = document.querySelectorAll('nav.navMenu > ul > li > a');
 for(let i = 0;i < aTags.length;i++){
@@ -43,7 +82,38 @@ for(let i = 0;i < aTags.length;i++){
         let  href = a.getAttribute('href');//siteWorks
         let element = document.querySelector(href);//通过href获取元素（锚点所在的一整片区域）
         let top = element.offsetTop;//元素距离最顶端的距离
-        window.scrollTo(0,top - 80)//滑动距离
+        // window.scrollTo(0,top - 80)//滑动距离
+
+        // let n = 20;//一共动多少次
+        // let t = 500 / n;//多少时间动一次
+        // let currentTop = window.scrollY;//当前高度
+        // let targetTop = top - 80;//滑动目标高度
+        // let S = targetTop - currentTop;//滑动距离
+        // let s = S / n;//每次滑动距离
+        // let i = 0;
+        // let id = setInterval(()=>{
+        //     if(i === n){
+        //         window.clearInterval(id);
+        //         return
+        //         }
+        //         i = i + 1;
+        //         window.scrollTo(0,currentTop + s*i)
+        //     },t)
+
+        let currentTop = window.scrollY;
+        let targetTop = top - 80;
+        let s = targetTop - currentTop;
+        var coords = { y:currentTop };
+        var t = Math.abs((s/100)*300);
+        if(t>500){ t = 500 }
+        var tween = new TWEEN.Tween(coords)
+            .to({ y:targetTop},t)
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .onUpdate(function () {
+                window.scrollTo(0,coords.y)
+            })
+            .start();
+
     }
 }
 
