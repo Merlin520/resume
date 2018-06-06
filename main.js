@@ -14,6 +14,17 @@ portfolio3.onclick = function () {
 //清除loading
 loadingPage.classList.remove('active');
 
+
+//添加offset类
+let specialTags = document.querySelectorAll('[data-x]');
+for(let i = 0;i < specialTags.length;i++){
+    specialTags[i].classList.add('offset')
+}
+
+setTimeout(()=>{
+    findClosest()
+},200);
+// findClosest()
 //滑动
 window.onscroll = function (xx) {
     if(window.scrollY > 0){
@@ -22,33 +33,57 @@ window.onscroll = function (xx) {
         topNavBar.classList.remove('sticky')
     }
 
-    let specialTags = document.querySelectorAll('[data-x]');
-    let minIndex = 0;
-    for(let i = 0;i < specialTags.length;i++){
-        if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-            minIndex = i
-        }
-    }
-    for(let i = 0;i < specialTags.length;i++){
-        specialTags[i].classList.remove('active');
-    }
-    specialTags[minIndex].classList.add('active');
-
-
-    //招标签
-    let id = specialTags[minIndex].id;
-    console.log(id);
-    let a = document.querySelector('a[href="#'+ id + '"]');
-    console.log(a);
-    let li =a.parentNode;
-    console.log(li);
-    let brothersAndME = li.parentNode.children;
-    console.log(brothersAndME);
-    for(let i = 0;i < brothersAndME.length;i++){
-        brothersAndME[i].classList.remove('active');
-    }
-    li.classList.add('active');
+    findClosest();
+    // let specialTags = document.querySelectorAll('[data-x]');
+    // let minIndex = 0;
+    // for(let i = 0;i < specialTags.length;i++){
+    //     if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+    //         minIndex = i
+    //     }
+    // }
+    // // for(let i = 0;i < specialTags.length;i++){
+    // //     specialTags[i].classList.remove('active');
+    // // }
+    // // specialTags[minIndex].classList.add('active');
+    //
+    //
+    // //找标签 minIndex是离窗口最近的元素
+    // specialTags[minIndex].classList.remove('offset');
+    // let id = specialTags[minIndex].id;
+    // let a = document.querySelector('a[href="#'+ id + '"]');
+    // let li =a.parentNode;
+    // let brothersAndME = li.parentNode.children;
+    // for(let i = 0;i < brothersAndME.length;i++){
+    //     brothersAndME[i].classList.remove('highlight');
+    // }
+    // li.classList.add('highlight');
 };
+
+    function findClosest() {
+        let specialTags = document.querySelectorAll('[data-x]');
+        let minIndex = 0;
+        for(let i = 0;i < specialTags.length;i++){
+            if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+                minIndex = i
+            }
+        }
+        // for(let i = 0;i < specialTags.length;i++){
+        //     specialTags[i].classList.remove('active');
+        // }
+        // specialTags[minIndex].classList.add('active');
+
+
+        //找标签 minIndex是离窗口最近的元素
+        specialTags[minIndex].classList.remove('offset');
+        let id = specialTags[minIndex].id;
+        let a = document.querySelector('a[href="#'+ id + '"]');
+        let li =a.parentNode;
+        let brothersAndME = li.parentNode.children;
+        for(let i = 0;i < brothersAndME.length;i++){
+            brothersAndME[i].classList.remove('highlight');
+        }
+        li.classList.add('highlight');
+    }
 
 //点击下拉菜单效果、出现红色
 let liTags = document.querySelectorAll('nav.navMenu > ul > li');
