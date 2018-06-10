@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <script src="//at.alicdn.com/t/font_691821_mthtlcdm9dfe0zfr.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./loading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <link rel="stylesheet" href="./swiper.css">
     <title>我的简历</title>
 </head>
 <body>
@@ -178,21 +181,33 @@
             </div>
         </nav>
 
-        <div class="works" style="height: 600px ">
-            <div class="big">
-                <img src="./img/big.jpg" alt="作品1">
+
+
+        <!--将作品变成轮播-->
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img class="swiper-slide" src="./img/wow0.jpg" alt="wow0">
+                <img class="swiper-slide" src="./img/wow1.jpg" alt="wow1">
+                <img class="swiper-slide" src="./img/wow2.jpg" alt="wow2">
+
             </div>
-            <div class="small" style="right: 16px;top: 0">
-                <img src="./img/small1.jpg" alt="作品2">
-            </div>
-            <div class="small" style="right: 16px;top:300px">
-                <img src="./img/small2.jpg" alt="做品3">
-            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-scrollbar"></div>
         </div>
 
     </section>
 
 
     <script src="./main.js"></script>
+    <script src="./swiper.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+
+.swiper-container {
+    width: 780px;
+    height: 460px;
+    margin-bottom: 200px;
+    /*position: relative;*/
+}
+
+.swiper-button-prev {
+    position: fixed;
+    margin-left: 45px;
+    margin-top: 8%;
+}
+
+.swiper-button-next {
+    position: fixed;
+    margin-right: 45px;
+    margin-top: 8%;
+}
