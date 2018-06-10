@@ -19,6 +19,7 @@ var mySwiper = new Swiper ('.swiper-container', {
     // scrollbar: {
     //     el: '.swiper-scrollbar',
     // },
-})
+});
 
-// console.log(Swiper)测试
+//测试是否引入成功
+// console.log(Swiper)
