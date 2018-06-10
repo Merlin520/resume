@@ -1,25 +1,42 @@
+!function () {
 
-var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    // direction: 'vertical',
-    loop: true,//是否无缝
+    var view = document.querySelector('#mySlides');
 
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
+    var controller = {
+        view :null,
+        swiper:null,//轮播
+        swiperOptions:{
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        },
+        init: function (view) {
+            this.view = view;
+            this.initSwiper()
+        },
+        initSwiper: function () {
+            this.swiper = new Swiper(
+            this.view.querySelector('.swiper-container'),
+            this.swiperOptions
+            );
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+        },
 
-    // And if we need scrollbar
-    // scrollbar: {
-    //     el: '.swiper-scrollbar',
-    // },
-});
+    };
 
-//测试是否引入成功
-// console.log(Swiper)
+
+    controller.init(view);
+
+
+}.call();
+
+
+
+
+    //测试是否引入成功
+    // console.log(Swiper)

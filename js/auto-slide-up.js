@@ -1,5 +1,8 @@
 
 //找特殊元素，添加offset类
+
+!function () {
+
 let specialTags = document.querySelectorAll('[data-x]');
 for(let i = 0;i < specialTags.length;i++){
     specialTags[i].classList.add('offset')
@@ -44,3 +47,5 @@ function findClosestAndRemoveOffset() {
     }
     li.classList.add('highlight');
 }
+
+}.call();
