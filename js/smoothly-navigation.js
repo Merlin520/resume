@@ -3,32 +3,23 @@
 
     var view = document.querySelector('nav.navMenu');
 
-    var controller = function (view) {
-
-    let liTags = view.querySelectorAll('nav.navMenu > ul > li');
-    for(let i = 0;i < liTags.length;i++){
-        liTags[i].onmouseenter = function (x) {
-            x.currentTarget.classList.add('active')
-        };
-        liTags[i].onmouseleave = function (x) {
-            x.currentTarget.classList.remove('active');
-
-        };
-    }
-    //tween指定代码
-    function animate(time) {
+    var controller = {
+        view:null,
+        aTags:null,
+        init:function (view) {
+            this.view = view;
+            this.initAnimation();
+            this.bindEvents();
+        },
+        initAnimation:function () {
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
         requestAnimationFrame(animate);
-        TWEEN.update(time);
-    }
-    requestAnimationFrame(animate);
+        },
 
-    let aTags = document.querySelectorAll('nav.navMenu > ul > li > a');
-    for(let i = 0;i < aTags.length;i++){
-        aTags[i].onclick = function (x) {
-            x.preventDefault();
-            let a = x.currentTarget;
-            let  href = a.getAttribute('href');//siteWorks
-            let element = document.querySelector(href);//通过href获取元素（锚点所在的一整片区域）
+        scrollToElement:function (element) {
             let top = element.offsetTop;//元素距离最顶端的距离
 
 
@@ -45,11 +36,30 @@
                     window.scrollTo(0,coords.y)
                 })
                 .start();
-        }
-    }
+        },
+
+        bindEvents:function () {
+            let aTags = this.view.querySelectorAll('nav.navMenu > ul > li > a');
+            for(let i = 0;i < aTags.length;i++){
+                aTags[i].onclick =  (x) => {
+                    x.preventDefault();
+                    let a = x.currentTarget;
+                    let  href = a.getAttribute('href');//siteWorks
+
+                    // let element = document.querySelector(href);
+                       let element = document.querySelector(href);
+                    //通过href获取元素（锚点所在的一整片区域）
+                    this.scrollToElement(element)
+
+
+                }
+            }
+        },
 
     };
 
-    controller(view);
+
+
+    controller.init(view);
 
     }.call();
