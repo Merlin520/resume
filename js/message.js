@@ -6,13 +6,29 @@ AV.init({
     appKey: APP_KEY
 });
 
-console.log(111)
+let myForm = document.querySelector('#postMessageForm');
 
-//测试代码
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-    words: 'Hello World!'
+myForm.addEventListener('submit',function (e) {
+    e.preventDefault();
+    let content = myForm.querySelector('input[name=content]').value;
+    var Message = AV.Object.extend('Message');
+    var message = new Message();
+    message.save({
+    content: content
 }).then(function(object) {
-    alert('LeanCloud Rocks!');
+    alert('留言成功');
 })
+});
+
+
+
+
+// console.log(111)
+//测试代码
+// var TestObject = AV.Object.extend('TestObject');
+// var testObject = new TestObject();
+// testObject.save({
+//     words: 'Hello World!'
+// }).then(function(object) {
+//     alert('LeanCloud Rocks!');
+// })
