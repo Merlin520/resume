@@ -1,31 +1,33 @@
 !function () {
 
-    var view = document.querySelector('section.message');
+    var model = Model({resourceName:'Message'})
 
-    var model = {
-        init:function () {
-            var APP_ID = 'iFLTCmx0BxlL30XXPRmDaqmz-gzGzoHsz';
-            var APP_KEY = 'rmS9Fox4m8FkDN2XtGlDykwb';
-            AV.init({
-                appId: APP_ID,
-                appKey: APP_KEY
-            });
-        },
-        //获取数据
-        fetch:function () {
-            var query = new AV.Query('Message');
-            return query.find()//promise对象
-        },
-        //新建数据
-        save:function (name,content) {
-            var Message = AV.Object.extend('Message');
-            var message = new Message();
-            return message.save({//promise对象
-                name:name,
-                content: content
-            })
-        }
-    }
+    var view = View('section.message');
+
+    // var model = {
+    //     init:function () {
+    //         var APP_ID = 'iFLTCmx0BxlL30XXPRmDaqmz-gzGzoHsz';
+    //         var APP_KEY = 'rmS9Fox4m8FkDN2XtGlDykwb';
+    //         AV.init({
+    //             appId: APP_ID,
+    //             appKey: APP_KEY
+    //         });
+    //     },
+    //     //获取数据
+    //     fetch:function () {
+    //         var query = new AV.Query('Message');
+    //         return query.find()//promise对象
+    //     },
+    //     //新建数据
+    //     save:function (name,content) {
+    //         var Message = AV.Object.extend('Message');
+    //         var message = new Message();
+    //         return message.save({//promise对象
+    //             name:name,
+    //             content: content
+    //         })
+    //     }
+    // }
 
 
 
@@ -75,7 +77,7 @@
             let myForm = this.form;
             let name = myForm.querySelector('input[name=name]').value;
             let content = myForm.querySelector('input[name=content]').value;
-            this.model.save(name,content).then(function(object) {
+            this.model.save({'name':name,'content':content}).then(function(object) {
                 // window.location.reload()
                 let li = document.createElement('li');
                 li.innerText = `${object.attributes.name}: ${object.attributes.content}`;
