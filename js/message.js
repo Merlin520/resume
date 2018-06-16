@@ -29,20 +29,14 @@
     //     }
     // }
 
-
-
-    var controller = {
-        view:null,
-        model:null,
-        init:function (view,model) {
-            this.view = view;
-            this.model = model;
+    var controller = Controller({
+        
+        init:function(view,controller){
 
             this.messageList = view.querySelector('#messageList');
             this.form = view.querySelector('form');
-            this.model.init();
+        
             this.loadMessages();
-            this.bindEvents()
         },
 
         loadMessages:function () {
@@ -87,7 +81,72 @@
 
             })
         }
-    };
+        
+
+
+
+    })
+
+
+
+    // var controller = {
+        // view:null,
+        // model:null,
+        // messageList:null,
+        // init:function (view,model) {
+        //     this.view = view;
+        //     this.model = model;
+
+        //     this.messageList = view.querySelector('#messageList');
+        //     this.form = view.querySelector('form');
+        //     this.model.init();
+        //     this.loadMessages();
+        //     this.bindEvents()
+        // },
+
+        // loadMessages:function () {
+        //     var query = new AV.Query('Message');
+        //     this.model.fetch().then( (messages) => {
+        //         let array = messages.map((item)=>item.attributes);
+        //         array.forEach((item)=>{
+        //             let li = document.createElement('li');
+        //             li.innerText = `${item.name}: ${item.content}`;
+        //             // let messageList = document.querySelector('#messageList');
+        //             this.messageList.appendChild(li)
+        //         })
+        //     }, function (error) {
+        //         alert('网络繁忙，稍后再试')
+        //     })
+        //         .then(()=>{},(error)=>{
+        //             console.log(error);
+        //         });
+        // },
+
+        // bindEvents:function () {
+
+        //     // let myForm = document.querySelector('#postMessageForm');
+        //     //     let myForm = this.form;
+        //         this.form.addEventListener('submit', (e)=> {
+        //         e.preventDefault();
+        //         this.saveMessage();
+        //     });
+        // },
+
+        // saveMessage:function () {
+        //     let myForm = this.form;
+        //     let name = myForm.querySelector('input[name=name]').value;
+        //     let content = myForm.querySelector('input[name=content]').value;
+        //     this.model.save({'name':name,'content':content}).then(function(object) {
+        //         // window.location.reload()
+        //         let li = document.createElement('li');
+        //         li.innerText = `${object.attributes.name}: ${object.attributes.content}`;
+        //         let messageList = document.querySelector('#messageList');
+        //         messageList.appendChild(li);
+        //         myForm.querySelector('input[name=content]').value = '';
+
+        //     })
+        // }
+    // };
 
 
 
